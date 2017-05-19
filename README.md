@@ -28,13 +28,17 @@ This should return an executable, which you can then run from your terminal by t
 1. Running a new calibration 
 Open up a new terminal window. Navigate to the directory 'calib_camToDMD' and make sure the CMakeLists.txt file is correct. Run:
 
-ccmake .
+ccmake .  
 make
 
 This should return an executable, which you can then run from your termainal by typing: 
 
-./calib_camToDMD
+./calib_camToDMD  
+
+Prior to running calib_camToDMD, we need to project a calibration image with the DMD and take a picture of it with our camera. Run ./DisplayImageDMD so that it projects 'dmd_calib_img.bmp'. Save the picture as 'cam_calib_img.jpg' and in the same directory as 'calib_camToDMD'  
+  
+A. Run ./DisplayImageDMD with the projected image 'calibration_img.bmp'.
+B. Take a picture of this image with your camera and save the image as ' in the directory 'calib_camToDMD'. 
 2. Creating a ROI (Mask) for Projection
 Run 'dmd_util' from Matlab's command line. A GUI should appear with two figure axes and an array of push buttons. 
 3. Displaying a ROI (Mask) for Projection
-
