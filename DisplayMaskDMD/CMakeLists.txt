@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( DisplayMaskDMD )
+find_package( OpenCV REQUIRED )
+add_executable( DisplayMaskDMD DisplayMaskDMD.cpp )
+target_link_libraries( DisplayMaskDMD ${OpenCV_LIBS} )

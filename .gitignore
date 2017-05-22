@@ -1,5 +1,9 @@
 # Executables
 *.exe
+DisplayImageDMD/DisplayImageDMD
+SelectROIDMD/SelectROIDMD
+DisplayMask/DisplayMaskDMD
+calib_camToDMD/calib_camToDMD
 
 # CMake
 CMakeCache.txt
