@@ -59,4 +59,5 @@ Run 'dmd_util' from Matlab's command line. A GUI should appear with two figure a
 2.5. Creating a ROI (Mask) for Projection (CPP)
 Compile the .cpp file into an executable as described in 0 and 1. Run ./SelectROIDMD. User input should be self-explanatory. Ouptut is a binary image containing the user selected mask.  
 
-3. Displaying a ROI (Mask) for Projection
+3. Displaying a ROI (Mask) for Projection  
+Ensure 'cam_img_mask.bmp' or 'cam_img_mask.jpg' is saved in the directory 'DisplayMaskDMD'. Compile the cpp code into an executable as described in 0 and 1. Run ./DisplayMaskDMD. This will display the user defined mask in dmd coordinates.

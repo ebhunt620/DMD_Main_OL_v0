@@ -1,3 +1,7 @@
+//This code was developed in November 2016 by Elizabeth E. Hunter at the
+//University of Pennsylvania School of Engineering and Applied Science.
+// ebeattie (at) seas (dot) upenn (dot) edu
+
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
 #include <iostream>
@@ -68,9 +72,9 @@ int main() {
 	    		3, 		        // line thickness
 			    CV_AA, 0);
     fillPoly(black, &contour_pts,&npts,1,Scalar(255,255,255));
-    resize(black, black, Size(), 2.0, 2.0);
     imshow("output - Press any key to quit",black);
-    imwrite("cam_mask.jpg",black);
+    resize(black, black, Size(), 2.0, 2.0);
+    imwrite("cam_img_mask.jpg",black);
     waitKey(0);
 	//Mat black(Size(dmd_w, dmd_h), CV_8UC3, Scalar(0, 0, 0));
     // p will update with new mouse-click image coordinates 

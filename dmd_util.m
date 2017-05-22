@@ -1,3 +1,8 @@
+% This code was developed in November 2016 by Elizabeth E. Hunter at the
+% University of Pennsylvania School of Engineering and Applied Science.
+% ebeattie (at) seas (dot) upenn (dot) edu
+
+
 function varargout = dmd_util(varargin)
 % DMD_UTIL MATLAB code for dmd_util.fig
 %      DMD_UTIL, by itself, creates a new DMD_UTIL or raises the existing
@@ -122,7 +127,7 @@ homography = projective2d(h);
 final_contour =handles.update_contour;
 final_contour_warp = flipud(final_contour);
 %%final_contour_warp = imwarp(final_contour,homography);
-imwrite(final_contour_warp,'dmd_image.bmp');
+imwrite(final_contour_warp,'cam_img_mask.bmp');
 
 
 % --- Executes on slider movement.

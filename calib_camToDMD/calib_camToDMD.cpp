@@ -1,3 +1,7 @@
+//This code was developed in November 2016 by Elizabeth E. Hunter at the
+//University of Pennsylvania School of Engineering and Applied Science.
+// ebeattie (at) seas (dot) upenn (dot) edu
+
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
 #include <iostream>
@@ -91,7 +95,9 @@ findChessboardCorners(dst_gray, patternSize, dst_corners);
   //resize(copy_src, copy_src_rsz,Size(), 0.5,0.5);
   imshow( "detected_src_corners", copy_src );
   imwrite("detected_src_corners.jpg",copy_src);
-  // pts_src and pts_dst are vectors of points in the source (camera) and destination (dmd) iamges. They are of the type vector<Point2f>. We need at least 4 corresponding points. 
+  // pts_src and pts_dst are vectors of points in the source (camera) and
+  // destination (dmd) iamges. They are of the type vector<Point2f>. We need
+  // at least 4 corresponding points.
   pts_dst = dst_corners;
   pts_src = src_corners;
 
@@ -105,13 +111,18 @@ findChessboardCorners(dst_gray, patternSize, dst_corners);
   Mat h = findHomography(pts_src, pts_dst);
   //Mat h = getAffineTransform(pts_src, pts_dst);
 // WRITE HOMOGRAPHY MATRIX TO TEXT FILE
-	std::fstream outfile("homography.txt", std::fstream::out);
-   outfile <<  h << std::endl;
-   outfile.close();
+	// std::fstream outfile("homography.txt", std::fstream::out);
+ //   outfile <<  h << std::endl;
+ //   outfile.close();
+  FileStorage fs("homography.xml",FileStorage::WRITE);
+  fs << "homography" << h;
+  fs.release();
 
- //  //The calculated homography can be used to warp the source image to the destination. im_src and im_dst  are of type Mat. Size is the size (width, height) of im_dst.
- // This is a check to make sure that the homography is valid. Warp the camera image to the dmd. 
-   // The output should be a window displaying the same image that is being projected to the dmd.
+  //The calculated homography can be used to warp the source image to the
+  //destination. im_src and im_dst  are of type Mat. Size is the size (width,
+  //height) of im_dst.  This is a check to make sure that the homography is
+  //valid. Warp the camera image to the dmd.   The output should be a window
+  //displaying the same image that is being  projected to the dmd.
  Mat im_dmd, im_src, im_show;
  im_src = src;
   warpPerspective(im_src, im_dmd, h, Size(dmd_w,dmd_h));

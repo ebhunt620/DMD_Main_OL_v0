@@ -1,3 +1,7 @@
+//This code was developed in November 2016 by Elizabeth E. Hunter at the
+//University of Pennsylvania School of Engineering and Applied Science.
+// ebeattie (at) seas (dot) upenn (dot) edu
+
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
 #include <iostream>

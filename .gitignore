@@ -1,0 +1,11 @@
+# Executables
+*.exe
+
+# CMake
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+
+# Hidden System Files
+.DS_Store
