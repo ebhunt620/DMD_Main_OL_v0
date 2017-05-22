@@ -35,7 +35,7 @@ int main() {
     moveWindow("destination_img",0, 880);
     resizeWindow("destination_img", dmd_w, dmd_h);
     // Specify the image you want to display. CHANGE THIS TO YOUR DESIRED IMAGE.
-    dst = imread("calibration_img.bmp");
+    dst = imread("dmd_calib_img.bmp");
     cvtColor( dst, dst_gray, CV_BGR2GRAY ); //convert to grayscale
     imshow("destination_img",dst_gray); //show destination image on the screen
     
